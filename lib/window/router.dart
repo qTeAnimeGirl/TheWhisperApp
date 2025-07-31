@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:thewhisperapp/screens/chat_list_screen.dart';
 import 'package:thewhisperapp/screens/connecting_screen.dart';
 import 'package:thewhisperapp/screens/login_screen.dart';
 import 'package:thewhisperapp/screens/test_screen.dart';
@@ -21,6 +22,8 @@ class _AppRouterState extends State<AppRouter> {
         return LoginScreen();
       case "/connecting":
         return LoadingScreen();
+      case "/chat":
+        return ChatListScreen();
       case "/test":
         return TestScreen();
     }

@@ -52,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       text: "Login",
 
                       onTap: () => {
-                        Navigator.pushNamed(context, "/connecting")
+                        Navigator.pushNamed(context, "/chat")
                       },
                     ),
                     AccentButton(

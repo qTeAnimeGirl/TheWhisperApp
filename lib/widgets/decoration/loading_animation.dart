@@ -13,10 +13,10 @@ class LoadingAnimation extends StatefulWidget {
 
 class _LoadingAnimationState extends State<LoadingAnimation> {
   static const List<String> _assets = [
-    'assets/home_page/Eclipsa.svg',
-    'assets/home_page/Meteora.svg',
-    'assets/home_page/Moon.svg',
-    'assets/home_page/Star.svg',
+    'assets/animation/Eclipsa.svg',
+    'assets/animation/Meteora.svg',
+    'assets/animation/Moon.svg',
+    'assets/animation/Star.svg',
   ];
   static final int _maxFrame = _assets.length * 2 - 1;
 

@@ -53,6 +53,7 @@ dependencies:
   sqlite3: ^2.7.5
   permission_handler: ^11.4.0
   image: ^4.1.3
+  fading_edge_scrollview: ^4.1.1
 
 dev_dependencies:
   flutter_test:
@@ -83,12 +84,13 @@ flutter:
     - assets/titlebar/close.svg
     - assets/titlebar/minimize.svg
     - assets/Logo.png
-    - assets/home_page/Eclipsa.svg
-    - assets/home_page/Meteora.svg
-    - assets/home_page/Moon.svg
-    - assets/home_page/Star.svg
+    - assets/animation/Eclipsa.svg
+    - assets/animation/Meteora.svg
+    - assets/animation/Moon.svg
+    - assets/animation/Star.svg
     - assets/ui_elements/checkbox.svg
     - assets/files/database_example.db
+    - assets/sample/profile_picture.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
