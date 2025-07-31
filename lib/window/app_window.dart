@@ -18,7 +18,6 @@ class AppWindow extends StatelessWidget {
       backgroundColor: surfaceColor,
       body: Stack(
         children: [
-
           AppRouter(),
           if (_isDesktop)
             const DragToMoveArea(

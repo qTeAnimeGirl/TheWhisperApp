@@ -54,7 +54,10 @@ class _AppRouterState extends State<AppRouter> {
               opacity: fadeIn,
               child: FadeTransition(
                 opacity: fadeOut,
-                child: child,
+                child: Container(
+                  color: Colors.transparent,
+                  child: child,
+                ),
               ),
             );
           },
