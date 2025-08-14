@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:thewhisperapp/widgets/decoration/loading_animation.dart';
 
-class LoadingScreen extends StatelessWidget {
-  const LoadingScreen({super.key});
+class IdleScreen extends StatelessWidget {
+  final String text;
+
+  const IdleScreen({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,7 @@ class LoadingScreen extends StatelessWidget {
             size: 120,
           ),
           Text(
-            "Connecting to the server",
+            text,
             style: Theme.of(context).textTheme.labelLarge,
           )
         ],

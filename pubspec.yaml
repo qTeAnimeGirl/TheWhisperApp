@@ -91,6 +91,7 @@ flutter:
     - assets/ui_elements/checkbox.svg
     - assets/files/database_example.db
     - assets/sample/profile_picture.png
+    - assets/chat/send.svg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

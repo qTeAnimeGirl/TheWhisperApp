@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 TextTheme textTheme = TextTheme(
     bodySmall: TextStyle(
         fontSize: 10,
-        fontWeight: FontWeight.w500
+        fontWeight: FontWeight.w600
     ),
     bodyMedium: TextStyle(
         fontSize: 12,

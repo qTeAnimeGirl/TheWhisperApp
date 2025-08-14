@@ -10,12 +10,15 @@ class SidebarChat extends StatefulWidget {
   final String lastMessage;
   final int picture;
   final bool focus;
+  final VoidCallback? onTap;
 
   const SidebarChat({super.key,
     required this.height,
     required this.title,
     required this.lastMessage,
-    required this.picture, required this.focus
+    required this.picture,
+    required this.focus,
+    this.onTap
   });
 
   @override
@@ -56,47 +59,50 @@ class _SidebarChatState extends State<SidebarChat> {
     TextStyle lastMessageTextStyle = Theme.of(context).textTheme.bodyMedium!;
 
 
-    return AnimatedContainer(
-      padding: defaultChatInnerPadding,
-      duration: defaultDuration,
-      height: widget.height,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(defaultBorderRadius),
-          color: widget.focus ? defaultFocusColor : defaultColor
-      ),
-      child: Row(
-        spacing: 5,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          ProfilePicture(
-            size: profilePictureSize,
-            image: profilePictureBytes,
-          ),
-
-          Expanded(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-
-              children: [
-                Text(
-                  widget.title,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: titleTextStyle,
-                ),
-
-                Text(
-                  widget.lastMessage,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: lastMessageTextStyle
-                ),
-              ],
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: AnimatedContainer(
+        padding: defaultChatInnerPadding,
+        duration: defaultDuration,
+        height: widget.height,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(defaultBorderRadius),
+            color: widget.focus ? defaultFocusColor : defaultColor
+        ),
+        child: Row(
+          spacing: 5,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            ProfilePicture(
+              size: profilePictureSize,
+              image: profilePictureBytes,
             ),
-          )
-        ],
+
+            Expanded(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+
+                children: [
+                  Text(
+                    widget.title,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: titleTextStyle,
+                  ),
+
+                  Text(
+                      widget.lastMessage,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: lastMessageTextStyle
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

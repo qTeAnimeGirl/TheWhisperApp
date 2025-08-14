@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class TransparentInput extends StatelessWidget {
-  final double width;
+  final double? width;
   final bool? autocorrect;
   final bool? obscureText;
   final EdgeInsets? contentPadding;
@@ -15,7 +15,7 @@ class TransparentInput extends StatelessWidget {
   final bool? active;
 
   const TransparentInput({super.key,
-    required this.width,
+    this.width,
     this.autocorrect,
     this.obscureText,
     this.contentPadding,

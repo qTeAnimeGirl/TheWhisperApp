@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:thewhisperapp/screens/chat_list_screen.dart';
+import 'package:thewhisperapp/screens/chat_screen.dart';
 import 'package:thewhisperapp/screens/idle_screen.dart';
-import 'package:thewhisperapp/screens/login_screen.dart';
-import 'package:thewhisperapp/screens/test_screen.dart';
 
-class AppRouter extends StatefulWidget {
-  const AppRouter({super.key});
+class ContentRouter extends StatefulWidget {
+  const ContentRouter({super.key});
 
   @override
-  State<AppRouter> createState() => _AppRouterState();
+  State<ContentRouter> createState() => _ContentRouterState();
 }
 
-class _AppRouterState extends State<AppRouter> {
-  final String idleText = "Connecting to the server";
+class _ContentRouterState extends State<ContentRouter> {
+  final String idleText = "Nothing here...";
 
   final _navKey = GlobalKey<NavigatorState>();
   Widget _switchPage(String? route)
@@ -21,13 +19,9 @@ class _AppRouterState extends State<AppRouter> {
     switch(route)
     {
       case "/":
-        return LoginScreen();
-      case "/connecting":
         return IdleScreen(text: idleText);
       case "/chat":
-        return ChatListScreen();
-      case "/test":
-        return TestScreen();
+        return ChatScreen();
     }
 
     return Container();
@@ -44,7 +38,7 @@ class _AppRouterState extends State<AppRouter> {
 
     return Navigator(
       key: _navKey,
-      initialRoute: "/",
+      initialRoute: "/chat",
       onGenerateRoute: (settings) {
         final Widget page = _switchPage(settings.name);
         return PageRouteBuilder(
